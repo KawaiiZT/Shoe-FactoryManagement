@@ -39,7 +39,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(64, 64, 64));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user-helmet-safety.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/user-helmet-safety.png"))); // NOI18N
         jButton3.setText("Worker");
         jButton3.setToolTipText("");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(64, 64, 64));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/home.png"))); // NOI18N
         jButton6.setText("Home");
         jButton6.setToolTipText("");
         jButton6.setIconTextGap(6);
@@ -67,7 +67,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton7.setBackground(new java.awt.Color(64, 64, 64));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warehouse-alt.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/warehouse-alt.png"))); // NOI18N
         jButton7.setText("warehouse");
         jButton7.setToolTipText("");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton8.setBackground(new java.awt.Color(64, 64, 64));
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-clock.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/calendar-clock.png"))); // NOI18N
         jButton8.setText("Calender");
         jButton8.setToolTipText("");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
