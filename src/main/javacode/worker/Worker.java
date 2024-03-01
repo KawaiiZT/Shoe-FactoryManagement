@@ -7,6 +7,9 @@ public class Worker {
     private JFrame fr;
     private JTable tableinfo;
     private JScrollPane sp;
+    private JLabel header;
+    private JPanel p1;
+    private JPanel p2;
 
     public Worker() {
         String data[][] = {{"101", "Trisit", "Charoenparipat"}};
@@ -14,9 +17,15 @@ public class Worker {
 
         fr = new JFrame("ShoeFactoryManagement");
         tableinfo = new JTable(data, column);
+        header = new JLabel("Worker");
+        p1 = new JPanel();
+        p2 = new JPanel(new GridLayout(2,0));
+        fr.setLayout(new GridLayout(0,2));
+        fr.add(p1);
+        fr.add(p2);
+        p2.add(header);
         sp = new JScrollPane(tableinfo);
-
-        fr.add(sp); // Adding JScrollPane instead of JTable
+        p2.add(sp); // Adding JScrollPane instead of JTable
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
