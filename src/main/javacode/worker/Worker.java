@@ -4,6 +4,7 @@ import main.javacode.SidebarMenu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Worker extends JFrame{
     private JFrame fr;
@@ -41,6 +42,22 @@ public class Worker extends JFrame{
         p2.add(p3, BorderLayout.SOUTH);
         p3.add(bn1);
         p3.add(bn2);
+
+        bn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Open WorkerAdd frame
+                WorkerAdd workerAddFrame = new WorkerAdd();
+                workerAddFrame.setVisible(true);
+            }
+        });
+        bn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                WorkerRemove workerRemoveFrame = new WorkerRemove();
+                workerRemoveFrame.setVisible(true);
+            }
+        });
 
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
