@@ -12,7 +12,10 @@ public class Worker extends JFrame{
     private JLabel header;
     private JPanel p1;
     private JPanel p2;
-
+    private JLabel l1;
+    private JButton bn1;
+    private JPanel p3;
+    private JButton bn2;
     public Worker() {
         String data[][] = {{"101", "Trisit", "Charoenparipat"}};
         String column[] = {"ID", "FIRSTNAME", "LASTNAME"};
@@ -22,14 +25,23 @@ public class Worker extends JFrame{
         header = new JLabel("Worker");
         SidebarMenu sidebarMenu = new SidebarMenu();
         p1 = new JPanel();
+        p2 = new JPanel(new BorderLayout());
+        fr.setLayout(new BorderLayout());
+        sp = new JScrollPane(tableinfo);
+        l1 = new JLabel("Worker");
+        p3 = new JPanel();
+        bn1 = new JButton("Add Worker");
+        bn2 = new JButton("Edit/Remove Worker");
+
         p1.add(sidebarMenu);
-        p2 = new JPanel(new BorderLayout(2,0));
-        fr.setLayout(new BorderLayout(0,2));
         fr.add(p1, BorderLayout.WEST);
         fr.add(p2);
-        p2.add(header);
-        sp = new JScrollPane(tableinfo);
-        p2.add(sp); // Adding JScrollPane instead of JTable
+        p2.add(l1, BorderLayout.NORTH);
+        p2.add(sp, BorderLayout.CENTER); // Adding JScrollPane instead of JTable
+        p2.add(p3, BorderLayout.SOUTH);
+        p3.add(bn1);
+        p3.add(bn2);
+
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
