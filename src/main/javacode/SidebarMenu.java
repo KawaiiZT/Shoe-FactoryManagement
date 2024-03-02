@@ -11,6 +11,7 @@ public class SidebarMenu extends JPanel{
         JButton btn3 = new JButton("btn3");
 
         add(Box.createRigidArea(new Dimension(0, 10)));
+
         add(btn1);
         add(Box.createRigidArea(new Dimension(0, 10)));
         // add 10-pixel ghost spacing
@@ -21,7 +22,7 @@ public class SidebarMenu extends JPanel{
         add(btn3);
 
         // Set the background color to white
-        setBackground(Color.GRAY);
+        setBackground(Color.decode("#711925"));
 
         // Make the JPanel opaque so the background color is visible
         setOpaque(true);

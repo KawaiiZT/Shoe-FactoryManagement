@@ -8,7 +8,6 @@ import java.awt.*;
 public class Warehouse extends JFrame {
     public Warehouse() {
         setTitle("Warehouse");
-        setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         SidebarMenu sidebarMenu = new SidebarMenu();
