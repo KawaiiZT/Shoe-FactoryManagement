@@ -19,9 +19,9 @@ public class Worker {
         tableinfo = new JTable(data, column);
         header = new JLabel("Worker");
         p1 = new JPanel();
-        p2 = new JPanel(new GridLayout(2,0));
-        fr.setLayout(new GridLayout(0,2));
-        fr.add(p1);
+        p2 = new JPanel(new BorderLayout(2,0));
+        fr.setLayout(new BorderLayout(0,2));
+        fr.add(p1, BorderLayout.WEST);
         fr.add(p2);
         p2.add(header);
         sp = new JScrollPane(tableinfo);
