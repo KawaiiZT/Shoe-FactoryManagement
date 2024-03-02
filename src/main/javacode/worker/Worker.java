@@ -1,9 +1,11 @@
 package main.javacode.worker;
 
+import main.javacode.SidebarMenu;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class Worker {
+public class Worker extends JFrame{
     private JFrame fr;
     private JTable tableinfo;
     private JScrollPane sp;
@@ -18,7 +20,9 @@ public class Worker {
         fr = new JFrame("ShoeFactoryManagement");
         tableinfo = new JTable(data, column);
         header = new JLabel("Worker");
+        SidebarMenu sidebarMenu = new SidebarMenu();
         p1 = new JPanel();
+        p1.add(sidebarMenu);
         p2 = new JPanel(new BorderLayout(2,0));
         fr.setLayout(new BorderLayout(0,2));
         fr.add(p1, BorderLayout.WEST);
