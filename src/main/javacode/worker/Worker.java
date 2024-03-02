@@ -42,7 +42,7 @@ public class Worker extends JFrame{
         p2.add(p3, BorderLayout.SOUTH);
         p3.add(bn1);
         p3.add(bn2);
-
+        //Connect to another Page WorkerAdd and WorkerRemove
         bn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -24,7 +24,7 @@ public class SidebarMenu extends JPanel{
         add(Box.createRigidArea(new Dimension(0, 10)));
 
         add(btn3);
-
+        //connect to another Page
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
