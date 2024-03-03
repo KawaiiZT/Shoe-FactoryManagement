@@ -4,6 +4,8 @@ import main.javacode.SidebarMenu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class WorkerAdd extends JFrame{
     private JFrame fr;
@@ -33,6 +35,7 @@ public class WorkerAdd extends JFrame{
     private JTextField InEmail;
     private JTextField InCiti;
     private JTextArea InAddress;
+    private JButton Cancel;
     public WorkerAdd(){
         fr = new JFrame("ShoeFactoryManagement");
         fr.setLayout(new BorderLayout());
@@ -47,7 +50,6 @@ public class WorkerAdd extends JFrame{
         pn6 = new JPanel();
         pn7 = new JPanel();
         dp1 = new JPanel();
-
 
         SidebarMenu sidebarMenu = new SidebarMenu();
         fr.add(pn8, BorderLayout.CENTER);
@@ -71,6 +73,7 @@ public class WorkerAdd extends JFrame{
         InCiti = new JTextField();
         InAddress = new JTextArea();
         dp1 = new JPanel(new FlowLayout());
+        Cancel = new JButton("Cancel/Return");
 
         pn8.add(pn1, BorderLayout.NORTH);
         pn8.add(pn2, BorderLayout.CENTER);
@@ -94,6 +97,16 @@ public class WorkerAdd extends JFrame{
         pn2.add(pn6);
         pn2.add(dp1);
         dp1.add(AddWorker);
+        dp1.add(Cancel);
+
+        Cancel.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Open WorkerAdd frame
+            Worker worker = new Worker();
+            worker.setVisible(true);
+        }
+    });
 
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);

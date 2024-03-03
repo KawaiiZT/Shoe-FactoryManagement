@@ -1,7 +1,6 @@
 package main.javacode.worker;
 
 import main.javacode.SidebarMenu;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
