@@ -1,5 +1,6 @@
 package main.javacode.worker;
 
+import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
 
 import javax.swing.*;
@@ -51,7 +52,7 @@ public class WorkerAdd extends JFrame{
         pn7 = new JPanel();
         dp1 = new JPanel();
 
-        SidebarMenu sidebarMenu = new SidebarMenu();
+        MenuDashboard sidebarMenu = new MenuDashboard();
         fr.add(pn8, BorderLayout.CENTER);
         fr.add(pn7, BorderLayout.WEST);
         pn7.add(sidebarMenu);

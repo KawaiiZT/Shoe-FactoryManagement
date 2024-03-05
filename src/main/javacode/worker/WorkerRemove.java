@@ -1,5 +1,6 @@
 package main.javacode.worker;
 
+import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
 
 import javax.swing.*;
@@ -18,7 +19,7 @@ public class WorkerRemove extends JFrame{
 
         fr.add(pn1, BorderLayout.WEST);
         fr.add(pn2, BorderLayout.EAST);
-        SidebarMenu sidebarMenu = new SidebarMenu();
+        MenuDashboard sidebarMenu = new MenuDashboard();
         pn1.add(sidebarMenu);
 
       fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

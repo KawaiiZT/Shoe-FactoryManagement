@@ -1,5 +1,6 @@
 package main.javacode.worker;
 
+import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class Worker extends JFrame{
         fr = new JFrame("ShoeFactoryManagement");
         tableinfo = new JTable(data, column);
         header = new JLabel("Worker");
-        SidebarMenu sidebarMenu = new SidebarMenu();
+        MenuDashboard menu = new MenuDashboard();
         p1 = new JPanel();
         p2 = new JPanel(new BorderLayout());
         fr.setLayout(new BorderLayout());
@@ -33,7 +34,7 @@ public class Worker extends JFrame{
         bn1 = new JButton("Add Worker");
         bn2 = new JButton("Edit/Remove Worker");
 
-        p1.add(sidebarMenu);
+        p1.add(menu);
         fr.add(p1, BorderLayout.WEST);
         fr.add(p2);
         p2.add(l1, BorderLayout.NORTH);

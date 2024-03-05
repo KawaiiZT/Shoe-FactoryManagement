@@ -1,5 +1,6 @@
 package main;
 
+import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ public class Warehouse extends JFrame {
         setTitle("Warehouse");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        SidebarMenu sidebarMenu = new SidebarMenu();
+        MenuDashboard sidebarMenu = new MenuDashboard();
         JPanel panel = new JPanel(new BorderLayout());
 
         panel.add(sidebarMenu, BorderLayout.WEST);
