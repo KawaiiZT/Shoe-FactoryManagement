@@ -9,7 +9,7 @@ import java.awt.*;
 public class Warehouse extends JFrame {
     public Warehouse() {
         setTitle("Warehouse");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
         MenuDashboard sidebarMenu = new MenuDashboard();
         JPanel panel = new JPanel(new BorderLayout());
@@ -18,6 +18,7 @@ public class Warehouse extends JFrame {
         add(panel);
 
         pack();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1280, 720);
         setVisible(true);
 
