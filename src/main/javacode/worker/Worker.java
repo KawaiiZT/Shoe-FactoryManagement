@@ -48,7 +48,7 @@ public class Worker extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Open WorkerAdd frame
-                WorkerAdd workerAddFrame = new WorkerAdd();
+                WorkerAdd2 workerAddFrame = new WorkerAdd2();
                 workerAddFrame.setVisible(true);
             }
         });

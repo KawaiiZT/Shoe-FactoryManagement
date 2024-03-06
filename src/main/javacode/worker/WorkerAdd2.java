@@ -1,5 +1,3 @@
-package main.javacode.worker;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,6 +7,7 @@ package main.javacode.worker;
  *
  * @author KoonD
  */
+package main.javacode.worker;
 public class WorkerAdd2 extends javax.swing.JFrame {
 
     /**
@@ -63,15 +62,7 @@ public class WorkerAdd2 extends javax.swing.JFrame {
 
         jLabel6.setText("Phonenumber");
 
-        jTextField2.setText("jTextField1");
-
-        jTextField3.setText("jTextField1");
-
-        jTextField1.setText("jTextField1");
-
-        jTextField4.setText("jTextField4");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -86,15 +77,16 @@ public class WorkerAdd2 extends javax.swing.JFrame {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jTextField5.setText("jTextField5");
-
-        jTextField6.setText("jTextField6");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Citizen ID");
 
         jLabel9.setText("Occupation");
 
-        jTextField7.setText("jTextField7");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -248,6 +240,10 @@ public class WorkerAdd2 extends javax.swing.JFrame {
     }
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
