@@ -5,11 +5,13 @@
 package main.javacode.expense;
 
 
+import main.javacode.MenuDashboard;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class Expense {
+public class Expense extends JFrame{
     public JFrame fr;
     public JPanel p1 ,p2, p3;
     public JLabel text;
@@ -25,6 +27,7 @@ public class Expense {
         text = new JLabel("INCOME-EXPENSE");
         scrollPane = new JScrollPane();
         table = new JTable();
+        MenuDashboard menu = new MenuDashboard();
         scrollPane.setViewportView(table);
         b = new JButton("ADD");
         p2.setLayout(new BorderLayout());
@@ -44,6 +47,7 @@ public class Expense {
         
         fr.add(p1, BorderLayout.WEST);
         fr.add(p2);
+        p1.add(menu);
         p2.add(text, BorderLayout.NORTH);
         p2.add(scrollPane, BorderLayout.CENTER);
         p2.add(p3, BorderLayout.SOUTH);
