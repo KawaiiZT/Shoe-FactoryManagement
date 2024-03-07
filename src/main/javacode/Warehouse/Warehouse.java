@@ -2,9 +2,12 @@ package main.javacode.Warehouse;
 
 import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
+import main.javacode.worker.WorkerAdd2;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Warehouse extends JFrame {
     private JFrame fr;
@@ -43,6 +46,14 @@ public class Warehouse extends JFrame {
         p3.add(bn1);
         p3.add(bn2);
 
+        bn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Open WorkerAdd frame
+                WarehouseAdd warehouseAdd = new WarehouseAdd();
+                warehouseAdd.setVisible(true);
+            }
+        });
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
