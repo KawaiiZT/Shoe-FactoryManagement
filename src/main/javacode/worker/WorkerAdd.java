@@ -5,10 +5,10 @@ import main.javacode.SidebarMenu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.io.*;
 
-public class WorkerAdd extends JFrame{
+public class WorkerAdd extends JFrame implements ActionListener, Serializable {
     private JFrame fr;
     private JPanel pn1;
     private JPanel pn2;
@@ -37,6 +37,7 @@ public class WorkerAdd extends JFrame{
     private JTextField InCiti;
     private JTextArea InAddress;
     private JButton Cancel;
+    private ObjectWorker ow;
     public WorkerAdd(){
         fr = new JFrame("ShoeFactoryManagement");
         fr.setLayout(new BorderLayout());
@@ -99,19 +100,46 @@ public class WorkerAdd extends JFrame{
         pn2.add(dp1);
         dp1.add(AddWorker);
         dp1.add(Cancel);
-
-        Cancel.addActionListener(new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Open WorkerAdd frame
-            Worker worker = new Worker();
-            worker.setVisible(true);
-        }
-    });
+        AddWorker.addActionListener(this);
+        Cancel.addActionListener(this);
 
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
+    }
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource().equals(AddWorker)) {
+            // Create ObjectWorker
+            ow = new ObjectWorker(InputFN.getText(), InputLN.getText(), InEmail.getText(), InNum.getText(), InCiti.getText(), InAddress.getText());
+            writeObjectWorkerFile();
+            readObjectWorkerFile();
+        } else if (ae.getSource().equals(Cancel)) {
+            // Open WorkerAdd frame
+            Worker worker = new Worker();
+            worker.setVisible(true);
+        }
+    }
+    public void writeObjectWorkerFile() {
+        try(FileOutputStream fos = new FileOutputStream("ObjectWorker.csv");
+            ObjectOutputStream ojos = new ObjectOutputStream(fos);) {
+            ojos.writeObject(ow);
+            ojos.flush();
+            System.out.println("Write");
+        } catch(IOException e) {
+            System.out.println(e);
+        }
+    }
+    public ObjectWorker readObjectWorkerFile() {
+        ow = new ObjectWorker();
+        try(FileInputStream fis = new FileInputStream("ObjectWorker.csv");
+            ObjectInputStream ojos = new ObjectInputStream(fis);) {
+            ow = (ObjectWorker)ojos.readObject();
+            System.out.println("Read");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e);
+        }
+        return ow;
     }
     public static void main(String[] args) {
         new WorkerAdd();

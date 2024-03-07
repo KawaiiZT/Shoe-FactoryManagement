@@ -1,6 +1,8 @@
 package main.javacode.worker;
 
-public class ObjectWorker {
+import java.io.Serializable;
+
+public class ObjectWorker implements Serializable {
     private String firstname;
     private String surname;
     private String email;
