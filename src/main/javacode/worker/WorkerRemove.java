@@ -22,7 +22,7 @@ public class WorkerRemove extends JFrame{
         MenuDashboard sidebarMenu = new MenuDashboard();
         pn1.add(sidebarMenu);
 
-      fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
     }
