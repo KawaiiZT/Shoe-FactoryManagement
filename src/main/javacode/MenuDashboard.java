@@ -9,6 +9,7 @@
  */
 package main.javacode;
 import main.javacode.worker.Worker;
+import main.javacode.Warehouse.Warehouse;
 import java.awt.Cursor;
 public class MenuDashboard extends javax.swing.JPanel {
 
