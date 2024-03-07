@@ -1,11 +1,16 @@
 package main.javacode.expense;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ExpenseAdd implements ActionListener {
+public class ExpenseAdd implements ActionListener, Serializable {
     private JFrame f;
     private JLabel l1;
     private JLabel l2;
@@ -24,6 +29,7 @@ public class ExpenseAdd implements ActionListener {
     private JPanel p5;
     SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
     Date d = new Date();
+    private ObjectExpense oep;
 
 
     public ExpenseAdd() {
@@ -80,17 +86,30 @@ public class ExpenseAdd implements ActionListener {
         f.setVisible(true);
     }
 
+    public static void main(String[] args) {
+        new ExpenseAdd();
+    }
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource().equals(b1)) {
+            oep = new ObjectExpense(l1.getText(),t1.getText(),Double.valueOf(t2.getText()),Double.valueOf(t2.getText()), t3.getText());
+            writeObjectExpense();
             t1.setText("");
             t2.setText("");
             t3.setText("");
         }
     }
 
-    public static void main(String[] args) {
-        new ExpenseAdd();
+    public void writeObjectExpense() {
+        try (FileOutputStream fs = new FileOutputStream("ObjectExpense.csv");
+             ObjectOutputStream os = new ObjectOutputStream(fs);) {
+            os.writeObject(oep);
+            System.out.println("done writing");
+            os.flush();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
     }
 }
-
