@@ -1,5 +1,4 @@
 package main.javacode;
-import main.Warehouse;
 import main.javacode.worker.Worker;
 
 import javax.swing.*;

@@ -1,14 +1,13 @@
 package main.javacode.worker;
 
 import main.javacode.MenuDashboard;
-import main.javacode.SidebarMenu;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class WorkerAdd extends JFrame implements ActionListener, Serializable {
+public class WorkerAddTestDontuse extends JFrame implements ActionListener, Serializable {
     private JFrame fr;
     private JPanel pn1;
     private JPanel pn2;
@@ -38,7 +37,7 @@ public class WorkerAdd extends JFrame implements ActionListener, Serializable {
     private JTextArea InAddress;
     private JButton Cancel;
     private ObjectWorker ow;
-    public WorkerAdd(){
+    public WorkerAddTestDontuse(){
         fr = new JFrame("ShoeFactoryManagement");
         fr.setLayout(new BorderLayout());
 
@@ -142,7 +141,7 @@ public class WorkerAdd extends JFrame implements ActionListener, Serializable {
         return ow;
     }
     public static void main(String[] args) {
-        new WorkerAdd();
+        new WorkerAddTestDontuse();
 
     }
 

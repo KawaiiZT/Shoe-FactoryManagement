@@ -1,4 +1,4 @@
-package Main;
+package main.javacode.Warehouse;
 
 import javax.swing.*;
 import java.awt.*;

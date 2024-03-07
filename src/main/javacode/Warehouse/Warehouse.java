@@ -1,4 +1,4 @@
-package main;
+package main.javacode.Warehouse;
 
 import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
