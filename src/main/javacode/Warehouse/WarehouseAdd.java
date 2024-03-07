@@ -2,8 +2,10 @@ package main.javacode.Warehouse;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 
-public class WarehouseAdd extends JFrame{
+public class WarehouseAdd extends JFrame implements ActionListener, Serializable {
     private JFrame fr;
     private JPanel pn;
     private JPanel pn1;
@@ -31,6 +33,7 @@ public class WarehouseAdd extends JFrame{
     private JButton AddWorker;
     private JButton Cancel;
     private JButton Edit;
+    private ObjectWarehouse owh;
     
     public WarehouseAdd(){
         fr = new JFrame("WareHouseAdd");
@@ -84,6 +87,9 @@ public class WarehouseAdd extends JFrame{
         dp1.add(AddWorker);
         dp1.add(Cancel);
         dp1.add(Edit);
+        AddWorker.addActionListener(this);
+        Cancel.addActionListener(this);
+        Edit.addActionListener(this);
         
         fr.add(pn8, BorderLayout.CENTER);
         fr.add(pn, BorderLayout.WEST);
@@ -93,5 +99,27 @@ public class WarehouseAdd extends JFrame{
     }
     public static void main(String[] args) {
         new WarehouseAdd();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource().equals(AddWorker)) {
+            owh = new ObjectWarehouse(InputID.getText(), InputName.getText(), Double.valueOf(InputQ.getText()), Boolean.valueOf(InputS.getText()));
+            writeObjectWarehouse();
+        } else if(ae.getSource().equals(Cancel)) {
+            //return to warehouse
+        } else if(ae.getSource().equals(Edit)) {
+            // do something
+        }
+    }
+    public void writeObjectWarehouse() {
+        try(FileOutputStream fos = new FileOutputStream("ObjectWarehouse.csv");
+            ObjectOutputStream oop = new ObjectOutputStream(fos);){
+            oop.writeObject(owh);
+            System.out.println("write");
+            oop.flush();
+        } catch(IOException e) {
+            System.out.println(e);
+        }
     }
 }
