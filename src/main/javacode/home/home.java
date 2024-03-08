@@ -27,10 +27,11 @@ public class home {
 
     private JPanel no4;
     private JPanel no3;
+    private JScrollPane sp;
 
     public home(){
         fr = new JFrame("ShoeFactoryManagement");
-        String data[][] = {{"101", "Trisit", "Charoenparipat"}};
+            String data[][] = {{"101", "Trisit", "Charoenparipat"},{"102","Tester2","Tester2"}};
         String column[] = {"ID", "FIRSTNAME", "LASTNAME"};
 
 
@@ -46,6 +47,7 @@ public class home {
         no2 = new JPanel();
         no3 = new JPanel();
         test = new JTable(data, column);
+        sp = new JScrollPane(test);
 
         no4 = new JPanel();
         fr.setLayout(new BorderLayout());
@@ -80,11 +82,11 @@ public class home {
         pn2.add(no4);
         no4.setBackground(Color.DARK_GRAY);
         no4.setLayout(new GridLayout(0,2));
-        no4.add(test);
+        no4.add(sp);
         no4.add(no3);
         no3.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         no3.setBackground(Color.ORANGE);
-        no4.setBorder(BorderFactory.createEmptyBorder(30,10,0,10));
+        no4.setBorder(BorderFactory.createEmptyBorder(0,10,0,10));
 
 
 
