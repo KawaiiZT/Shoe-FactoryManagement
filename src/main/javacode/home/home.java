@@ -15,18 +15,39 @@ public class home {
     private JLabel headline;
     private JLabel item;
     private JLabel numofItem;
+    private JPanel workerPanel;
     private JLabel worker;
     private JLabel numofworker;
     private JTable itemdetail;
     private JTable Workerdetail;
+    private JPanel no1;
+    private JPanel no2;
+
+    private JTable test;
+
+    private JPanel no4;
+    private JPanel no3;
+
     public home(){
         fr = new JFrame("ShoeFactoryManagement");
+        String data[][] = {{"101", "Trisit", "Charoenparipat"}};
+        String column[] = {"ID", "FIRSTNAME", "LASTNAME"};
+
+
         pn1 = new JPanel();
         pn2 = new JPanel();
         pn3 = new JPanel();
         headline = new JLabel("Dashboard");
         itembutton = new JButton();
+        workerPanel = new JPanel();
+        worker = new JLabel("Worker in data");
         item = new JLabel("Item in Stock");
+        no1 = new JPanel();
+        no2 = new JPanel();
+        no3 = new JPanel();
+        test = new JTable(data, column);
+
+        no4 = new JPanel();
         fr.setLayout(new BorderLayout());
         MenuDashboard menu = new MenuDashboard();
 
@@ -34,14 +55,36 @@ public class home {
         pn1.add(menu);
         fr.add(pn1, BorderLayout.WEST);
         fr.add(pn2, BorderLayout.CENTER);
-        pn2.setLayout(new GridLayout(10,0));
+        pn2.setBorder(BorderFactory.createEmptyBorder(-30,4,-70,10));
+        pn2.setLayout(new GridLayout(5,0));
         pn2.add(headline);
         pn2.add(pn3);
-        pn3.setLayout(new GridLayout(1,3,0,20));
+
+        //Button and Panel that show how many are there in the data
+        pn3.setLayout(new GridLayout(1,6,30,0));
+        pn3.setBorder(BorderFactory.createEmptyBorder(0,0,40,0));
         pn3.add(itembutton);
         itembutton.setLayout(new GridLayout(4,0));
         itembutton.add(item);
-        itembutton.setBackground(Color.black);
+        itembutton.setBackground(Color.RED);
+        pn3.add(workerPanel);
+        workerPanel.add(worker);
+        workerPanel.setBackground((Color.CYAN));
+        pn3.add(no1);
+        no1.setBackground(Color.GREEN);
+        pn3.add(no2);
+        no2.setBackground(Color.YELLOW);
+
+
+        //JTable for Static
+        pn2.add(no4);
+        no4.setBackground(Color.DARK_GRAY);
+        no4.setLayout(new GridLayout(0,2));
+        no4.add(test);
+        no4.add(no3);
+        no3.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        no3.setBackground(Color.ORANGE);
+        no4.setBorder(BorderFactory.createEmptyBorder(30,10,0,10));
 
 
 
