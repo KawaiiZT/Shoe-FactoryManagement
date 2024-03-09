@@ -8,6 +8,8 @@
  * @author KoonD
  */
 package main.javacode;
+import main.javacode.expense.Expense;
+import main.javacode.home.home;
 import main.javacode.worker.Worker;
 import main.javacode.Warehouse.Warehouse;
 import java.awt.Cursor;
@@ -240,6 +242,8 @@ public class MenuDashboard extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(192, 192, 192));
         jLabel4.setForeground(new java.awt.Color(192, 192, 192));
         jLabel7.setForeground(new java.awt.Color(192, 192, 192));
+        home home1 = new home();
+        home.setVisible(true);
 // TODO add your handling code here:
     }
 
@@ -248,6 +252,8 @@ public class MenuDashboard extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setForeground(new java.awt.Color(192, 192, 192));
         jLabel7.setForeground(new java.awt.Color(192, 192, 192));
+        Expense expense = new Expense();
+        expense.setVisible(true);
         // TODO add your handling code here:
     }
 
