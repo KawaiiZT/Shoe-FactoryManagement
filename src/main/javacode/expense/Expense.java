@@ -8,6 +8,8 @@ package main.javacode.expense;
 import main.javacode.MenuDashboard;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.table.*;
 
@@ -52,6 +54,15 @@ public class Expense extends JFrame{
         p2.add(scrollPane, BorderLayout.CENTER);
         p2.add(p3, BorderLayout.SOUTH);
         p3.add(b);
+
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ExpenseAddV2 expenseAddV2 = new ExpenseAddV2();
+                expenseAddV2.setVisible(true);
+            }
+        });
+
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);
     }
