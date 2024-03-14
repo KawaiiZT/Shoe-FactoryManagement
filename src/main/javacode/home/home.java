@@ -29,7 +29,6 @@ public class home {
     private JPanel no3;
     private JScrollPane sp;
 
-    private JPanel workerlabel;
     public home(){
         fr = new JFrame("ShoeFactoryManagement");
             String data[][] = {{"101", "Trisit", "Charoenparipat"},{"102","Tester2","Tester2"}};
@@ -41,8 +40,7 @@ public class home {
         pn3 = new JPanel();
         headline = new JLabel("Dashboard");
         itembutton = new JButton();
-        workerPanel = new JPanel(new GridLayout(1,1));
-        workerlabel = new JPanel(new FlowLayout());
+        workerPanel = new JPanel();
         worker = new JLabel("Worker in data");
         item = new JLabel("Item in Stock");
         no1 = new JPanel();
@@ -71,10 +69,13 @@ public class home {
         itembutton.setLayout(new GridLayout(4,0));
         itembutton.add(item);
         itembutton.setBackground(Color.RED);
+
         pn3.add(workerPanel);
-        workerPanel.add(workerlabel);
-        workerlabel.add(worker);
+        workerPanel.setLayout(new GridLayout(4,0));
+        workerPanel.setBorder(BorderFactory.createEmptyBorder(0,20,0,0));
+        workerPanel.add(worker);
         workerPanel.setBackground((Color.CYAN));
+        
         pn3.add(no1);
         no1.setBackground(Color.GREEN);
         pn3.add(no2);
