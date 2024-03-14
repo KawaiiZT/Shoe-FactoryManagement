@@ -65,19 +65,22 @@ public class home {
         //Button and Panel that show how many are there in the data
         pn3.setLayout(new GridLayout(1,6,30,0));
         pn3.setBorder(BorderFactory.createEmptyBorder(0,0,40,0));
+        //item
         pn3.add(itembutton);
         itembutton.setLayout(new GridLayout(4,0));
         itembutton.add(item);
         itembutton.setBackground(Color.RED);
-
+        //worker
         pn3.add(workerPanel);
         workerPanel.setLayout(new GridLayout(4,0));
         workerPanel.setBorder(BorderFactory.createEmptyBorder(0,20,0,0));
         workerPanel.add(worker);
         workerPanel.setBackground((Color.CYAN));
 
+        //stillworkingonit
         pn3.add(no1);
         no1.setBackground(Color.GREEN);
+        //stillworkingonit2
         pn3.add(no2);
         no2.setBackground(Color.YELLOW);
 
