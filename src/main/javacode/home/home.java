@@ -75,12 +75,11 @@ public class home {
         workerPanel.setBorder(BorderFactory.createEmptyBorder(0,20,0,0));
         workerPanel.add(worker);
         workerPanel.setBackground((Color.CYAN));
-        
+
         pn3.add(no1);
         no1.setBackground(Color.GREEN);
         pn3.add(no2);
         no2.setBackground(Color.YELLOW);
-
 
         //JTable for Static
         pn2.add(no4);
