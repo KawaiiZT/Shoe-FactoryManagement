@@ -4,6 +4,7 @@ import main.javacode.worker.Worker;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 public class home {
@@ -31,8 +32,14 @@ public class home {
 
     public home(){
         fr = new JFrame("ShoeFactoryManagement");
-            String data[][] = {{"101", "Trisit", "Charoenparipat"},{"102","Tester2","Tester2"}};
-        String column[] = {"ID", "FIRSTNAME", "LASTNAME"};
+        String data[][] = {{"101", "Trisit", "Charoenparipat"},{"102","Tester2","Tester2"}};
+        String columns[] = {"ID", "FIRSTNAME", "LASTNAME"};
+        DefaultTableModel model = new DefaultTableModel(data, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // Make all cells uneditable
+            }
+        };
 
 
         pn1 = new JPanel();
@@ -46,7 +53,7 @@ public class home {
         no1 = new JPanel();
         no2 = new JPanel();
         no3 = new JPanel();
-        test = new JTable(data, column);
+        test = new JTable(model);
         sp = new JScrollPane(test);
 
         no4 = new JPanel();

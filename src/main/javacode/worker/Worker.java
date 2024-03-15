@@ -3,6 +3,7 @@ package main.javacode.worker;
 import main.javacode.MenuDashboard;
 import main.javacode.SidebarMenu;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -19,10 +20,16 @@ public class Worker extends JFrame{
     private JButton bn2;
     public Worker() {
         String data[][] = {{"101", "Trisit", "Charoenparipat"}};
-        String column[] = {"ID", "FIRSTNAME", "LASTNAME"};
+        String columns[] = {"ID", "FIRSTNAME", "LASTNAME"};
+        DefaultTableModel model = new DefaultTableModel(data, columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // Make all cells uneditable
+            }
+        };
 
         fr = new JFrame("ShoeFactoryManagement");
-        tableinfo = new JTable(data, column);
+        tableinfo = new JTable(model);
         header = new JLabel("Worker");
         MenuDashboard menu = new MenuDashboard();
         p1 = new JPanel();
