@@ -61,7 +61,7 @@ public class planninghome extends JPanel {
             public void run() {
                 JFrame frame = new JFrame("Planning Home");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(400, 300);
+                frame.setSize(1280, 720);
                 frame.add(new planninghome());
                 frame.setVisible(true);
             }
