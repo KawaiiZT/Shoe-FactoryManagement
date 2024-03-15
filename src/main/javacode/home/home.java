@@ -40,8 +40,7 @@ public class home {
                 return false; // Make all cells uneditable
             }
         };
-
-
+        
         pn1 = new JPanel();
         pn2 = new JPanel();
         pn3 = new JPanel();
