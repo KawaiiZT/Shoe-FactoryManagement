@@ -48,6 +48,8 @@ public class home {
         itembutton = new JButton();
         workerPanel = new JPanel();
         worker = new JLabel("Worker in data");
+        numofworker = new JLabel("0");
+        numofworker.setFont(new Font("Arial", Font.PLAIN, 24));
         item = new JLabel("Item in Stock");
         no1 = new JPanel();
         no2 = new JPanel();
@@ -81,6 +83,7 @@ public class home {
         workerPanel.setLayout(new GridLayout(4,0));
         workerPanel.setBorder(BorderFactory.createEmptyBorder(0,20,0,0));
         workerPanel.add(worker);
+        workerPanel.add(numofworker);
         workerPanel.setBackground((Color.CYAN));
 
         //stillworkingonit
