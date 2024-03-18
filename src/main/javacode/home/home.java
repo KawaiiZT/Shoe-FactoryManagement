@@ -48,7 +48,10 @@ public class home {
         itembutton = new JButton();
         workerPanel = new JPanel();
         worker = new JLabel("Worker in data");
+
+        //will have to change a little for the numofworker
         numofworker = new JLabel("     0");
+        
         numofworker.setFont(new Font("Arial", Font.PLAIN, 24));
         item = new JLabel("Item in Stock");
         no1 = new JPanel();
