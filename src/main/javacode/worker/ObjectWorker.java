@@ -7,24 +7,39 @@ public class ObjectWorker implements Serializable {
     private String surname;
     private String email;
     private String phonenumber;
+    private String bday;
+    private String bmonth;
+    private String byear;
+    private String sex;
+    private String occupation;
     private String centizenID;
-    private String address;
+
 
     public ObjectWorker() {
         this.firstname = null;
         this.surname = null;
         this.email = null;
         this.phonenumber = null;
+        this.bday = null;
+        this.bmonth = null;
+        this.byear = null;
+        this.sex = null;
+        this.occupation = null;
         this.centizenID = null;
-        this.address = null;
+
     }
-    public ObjectWorker(String firstname,String surname,String email,String phonenumber, String centizenID,String address) {
+    public ObjectWorker(String firstname,String surname,String email,String phonenumber,String bday,String bmonth,String byear,String sex, String occupation, String centizenID,String address) {
         this.firstname = firstname;
         this.surname = surname;
         this.email = email;
         this.phonenumber = phonenumber;
+        this.bday = bday;
+        this.bmonth = bmonth;
+        this.byear = byear;
+        this.sex = sex;
+        this.occupation = occupation;
         this.centizenID = centizenID;
-        this.address = address;
+
     }
     public String getFirstname() {
         return firstname;
@@ -66,11 +81,43 @@ public class ObjectWorker implements Serializable {
         this.centizenID = centizenID;
     }
 
-    public String getAddress() {
-        return address;
+    public String getBday() {
+        return bday;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBday(String bday) {
+        this.bday = bday;
+    }
+
+    public String getBmonth() {
+        return bmonth;
+    }
+
+    public void setBmonth(String bmonth) {
+        this.bmonth = bmonth;
+    }
+
+    public String getByear() {
+        return byear;
+    }
+
+    public void setByear(String byear) {
+        this.byear = byear;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
     }
 }
