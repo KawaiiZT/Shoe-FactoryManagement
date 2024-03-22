@@ -98,7 +98,7 @@ public class home {
 
         //JTable for Static
         pn2.add(no4);
-        no4.setBackground(Color.DARK_GRAY);
+        no4.setBackground(Color.GRAY);
         no4.setLayout(new GridLayout(0,2));
         no4.add(sp);
         no4.add(no3);

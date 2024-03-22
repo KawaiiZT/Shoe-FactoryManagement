@@ -5,6 +5,8 @@ package main.javacode.expense;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import javax.swing.*;
+
 /**
  *
  * @author Nodd
@@ -41,7 +43,7 @@ public class ExpenseAddV2 extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(400, 200));
         setResizable(false);
 
