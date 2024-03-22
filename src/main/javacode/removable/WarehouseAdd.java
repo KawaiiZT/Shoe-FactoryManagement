@@ -1,4 +1,4 @@
-package main.javacode.Warehouse;
+package main.javacode.removable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +33,7 @@ public class WarehouseAdd extends JFrame implements ActionListener, Serializable
     private JButton AddWorker;
     private JButton Cancel;
     private JButton Edit;
-    private ObjectWarehouse owh;
+    //private ObjectWarehouse owh;
     
     public WarehouseAdd(){
         fr = new JFrame("WareHouseAdd");
@@ -104,7 +104,7 @@ public class WarehouseAdd extends JFrame implements ActionListener, Serializable
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(AddWorker)) {
-            owh = new ObjectWarehouse(InputID.getText(), InputName.getText(), Double.valueOf(InputQ.getText()), Boolean.valueOf(InputS.getText()));
+            //owh = new ObjectWarehouse(InputID.getText(), InputName.getText(), Double.valueOf(InputQ.getText()), Boolean.valueOf(InputS.getText()));
             writeObjectWarehouse();
         } else if(ae.getSource().equals(Cancel)) {
             //return to warehouse
@@ -115,7 +115,7 @@ public class WarehouseAdd extends JFrame implements ActionListener, Serializable
     public void writeObjectWarehouse() {
         try(FileOutputStream fos = new FileOutputStream("ObjectWarehouse.csv");
             ObjectOutputStream oop = new ObjectOutputStream(fos);){
-            oop.writeObject(owh);
+            //oop.writeObject(owh);
             System.out.println("write");
             oop.flush();
         } catch(IOException e) {
