@@ -2,31 +2,51 @@ package main.javacode.expense;
 
 import java.io.Serializable;
 public class ObjectExpense implements Serializable{
-    private String date;
+    private String day;
+    private String month;
+    private String year;
     private String order;
     private double expense;
     private double income;
     private String note;
     public ObjectExpense(){
-        this.date = null;
+        this.day = null;
+        this.month = null;
+        this.year = null;
         this.order = null;
         this.expense = 0.0;
         this.income = 0.0;
         this.note = null;
     }
     public ObjectExpense(String date, String order, double expense, double income, String note){
-        this.date = date;
+        this.day = date;
+        this.month = date;
+        this.year = date;
         this.order = order;
         this.expense = expense;
         this.income = income;
         this.note = note;
     }
     public String getDate(){
-        return date;
+        return day;
     }
 
     public void setDate(String date) {
-        this.date = date;
+        this.day = date;
+    }
+    public String getMonth(){
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+    public String getYear(){
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getOrder() {

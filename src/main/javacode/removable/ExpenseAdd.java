@@ -1,4 +1,4 @@
-package main.javacode.expense;
+package main.javacode.removable;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -29,7 +29,7 @@ public class ExpenseAdd implements ActionListener, Serializable {
     private JPanel p5;
     SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
     Date d = new Date();
-    private ObjectExpense oep;
+    //private ObjectExpense oep;
 
 
     public ExpenseAdd() {
@@ -93,7 +93,7 @@ public class ExpenseAdd implements ActionListener, Serializable {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource().equals(b1)) {
-            oep = new ObjectExpense(l1.getText(),t1.getText(),Double.valueOf(t2.getText()),Double.valueOf(t2.getText()), t3.getText());
+            //oep = new ObjectExpense(l1.getText(),t1.getText(),Double.valueOf(t2.getText()),Double.valueOf(t2.getText()), t3.getText());
             writeObjectExpense();
             t1.setText("");
             t2.setText("");
@@ -104,7 +104,7 @@ public class ExpenseAdd implements ActionListener, Serializable {
     public void writeObjectExpense() {
         try (FileOutputStream fs = new FileOutputStream("ObjectExpense.csv");
              ObjectOutputStream os = new ObjectOutputStream(fs);) {
-            os.writeObject(oep);
+            //os.writeObject(oep);
             System.out.println("done writing");
             os.flush();
         } catch (IOException e) {

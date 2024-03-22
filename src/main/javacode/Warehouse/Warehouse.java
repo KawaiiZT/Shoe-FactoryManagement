@@ -50,7 +50,7 @@ public class Warehouse extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Open WorkerAdd frame
-                WarehouseAdd warehouseAdd = new WarehouseAdd();
+                WarehouseAdd3 warehouseAdd = new WarehouseAdd3();
                 warehouseAdd.setVisible(true);
             }
         });
