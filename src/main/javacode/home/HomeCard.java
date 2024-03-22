@@ -22,8 +22,17 @@ public class HomeCard extends JFrame implements ActionListener {
         // Sidebar menu setup
         JPanel sidebarMenuPanel = new JPanel();
         sidebarMenuPanel.setLayout(new GridLayout(0, 1)); // Vertical layout
+        sidebarMenuPanel.setPreferredSize(new Dimension(150, 400));
+
 
         JButton homeItem = new JButton("Home");
+        homeItem.setBackground(new Color(52, 152, 219)); // Set background color
+        homeItem.setForeground(Color.WHITE); // Set text color
+        homeItem.setFont(new Font("Arial", Font.BOLD, 14)); // Set font
+        homeItem.setBorderPainted(false); // Remove border
+        homeItem.setFocusPainted(false); // Remove focus border
+        homeItem.setContentAreaFilled(true); // Set content area filled
+
         JButton menuItem2 = new JButton("Card 2");
         JButton menuItem3 = new JButton("Card 3");
         JButton workerItem = new JButton("Worker");
@@ -71,6 +80,9 @@ public class HomeCard extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch(Exception ignored){}
         String command = e.getActionCommand();
         cardLayout.show(cards, command);
     }
