@@ -4,10 +4,6 @@
  */
 
 package main.javacode;
-import main.javacode.expense.Expense;
-import main.javacode.home.home;
-import main.javacode.worker.Worker;
-import main.javacode.Warehouse.Warehouse;
 import java.awt.Cursor;
 public class Testmainmenu extends javax.swing.JFrame {
 

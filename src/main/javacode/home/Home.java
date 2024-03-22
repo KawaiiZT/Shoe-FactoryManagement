@@ -1,14 +1,10 @@
 package main.javacode.home;
-import main.javacode.MenuDashboard;
-import main.javacode.worker.Worker;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
-public class home {
-    private JFrame fr;
+
+public class Home extends JPanel {
     private JPanel pn1;
     private JPanel pn2;
     private JPanel pn3;
@@ -30,8 +26,9 @@ public class home {
     private JPanel no3;
     private JScrollPane sp;
 
-    public home(){
-        fr = new JFrame("ShoeFactoryManagement");
+    public Home(){
+        // Removed the JFrame creation
+
         String data[][] = {{"101", "Trisit", "Charoenparipat"},{"102","Tester2","Tester2"}};
         String columns[] = {"ID", "FIRSTNAME", "LASTNAME"};
         DefaultTableModel model = new DefaultTableModel(data, columns) {
@@ -40,7 +37,7 @@ public class home {
                 return false; // Make all cells uneditable
             }
         };
-        
+
         pn1 = new JPanel();
         pn2 = new JPanel();
         pn3 = new JPanel();
@@ -51,7 +48,7 @@ public class home {
 
         //will have to change a little for the numofworker
         numofworker = new JLabel("     0");
-        
+
         numofworker.setFont(new Font("Arial", Font.PLAIN, 24));
         item = new JLabel("Item in Stock");
         no1 = new JPanel();
@@ -61,13 +58,10 @@ public class home {
         sp = new JScrollPane(test);
 
         no4 = new JPanel();
-        fr.setLayout(new BorderLayout());
-        MenuDashboard menu = new MenuDashboard();
+        setLayout(new BorderLayout()); // Set layout for this panel
 
-
-        pn1.add(menu);
-        fr.add(pn1, BorderLayout.WEST);
-        fr.add(pn2, BorderLayout.CENTER);
+        add(pn1, BorderLayout.WEST);
+        add(pn2, BorderLayout.CENTER);
         pn2.setBorder(BorderFactory.createEmptyBorder(-30,4,-70,10));
         pn2.setLayout(new GridLayout(5,0));
         pn2.add(headline);
@@ -105,14 +99,5 @@ public class home {
         no3.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         no3.setBackground(Color.ORANGE);
         no4.setBorder(BorderFactory.createEmptyBorder(0,10,0,10));
-
-
-
-        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fr.setSize(1280, 720);
-        fr.setVisible(true);
-    }
-    public static void main(String[] args) {
-        new home();
     }
 }

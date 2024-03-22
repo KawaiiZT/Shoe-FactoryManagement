@@ -1,23 +1,17 @@
 package main.javacode.worker;
 
-import main.javacode.MenuDashboard;
-import main.javacode.SidebarMenu;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Worker extends JFrame{
-    private JFrame fr;
+public class Worker extends JPanel {
     private JTable tableinfo;
-    private JScrollPane sp;
     private JLabel header;
-    private JPanel p1;
-    private JPanel p2;
-    private JLabel l1;
     private JButton bn1;
-    private JPanel p3;
     private JButton bn2;
+
     public Worker() {
         String data[][] = {{"101", "Trisit", "Charoenparipat"}};
         String columns[] = {"ID", "FIRSTNAME", "LASTNAME"};
@@ -28,34 +22,25 @@ public class Worker extends JFrame{
             }
         };
 
-        fr = new JFrame("ShoeFactoryManagement");
         tableinfo = new JTable(model);
         header = new JLabel("Worker");
-        MenuDashboard menu = new MenuDashboard();
-        p1 = new JPanel();
-        p2 = new JPanel(new BorderLayout());
-        fr.setLayout(new BorderLayout());
-        sp = new JScrollPane(tableinfo);
-        l1 = new JLabel("Worker");
-        p3 = new JPanel();
         bn1 = new JButton("Add Worker");
         bn2 = new JButton("Edit/Remove Worker");
 
-        p1.add(menu);
-        fr.add(p1, BorderLayout.WEST);
-        fr.add(p2);
-        p2.add(l1, BorderLayout.NORTH);
-        p2.add(sp, BorderLayout.CENTER); // Adding JScrollPane instead of JTable
-        p2.add(p3, BorderLayout.SOUTH);
-        p3.add(bn1);
-        p3.add(bn2);
+        setLayout(new BorderLayout());
+        add(header, BorderLayout.NORTH);
+        add(new JScrollPane(tableinfo), BorderLayout.CENTER); // Adding JScrollPane instead of JTable
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(bn1);
+        buttonPanel.add(bn2);
+        add(buttonPanel, BorderLayout.SOUTH);
 
-        //Connect to another Page WorkerAdd and WorkerRemove
+        // Connect to another Page WorkerAdd and WorkerRemove
         bn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Open WorkerAdd frame
-                    WorkerAdd2 workerAddFrame = new WorkerAdd2();
+                WorkerAdd2 workerAddFrame = new WorkerAdd2();
                 workerAddFrame.setVisible(true);
             }
         });
@@ -66,13 +51,5 @@ public class Worker extends JFrame{
                 workerRemoveFrame.setVisible(true);
             }
         });
-
-        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fr.setSize(1280, 720);
-        fr.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Worker();
     }
 }

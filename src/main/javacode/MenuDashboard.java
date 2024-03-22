@@ -9,11 +9,11 @@
  */
 package main.javacode;
 import main.javacode.expense.Expense;
-import main.javacode.home.home;
+import main.javacode.home.Home;
 import main.javacode.worker.Worker;
 import main.javacode.Warehouse.Warehouse;
 import java.awt.Cursor;
-import main.javacode.planning.planninghome;
+
 public class MenuDashboard extends javax.swing.JPanel {
 
     /**
@@ -243,7 +243,7 @@ public class MenuDashboard extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(192, 192, 192));
         jLabel4.setForeground(new java.awt.Color(192, 192, 192));
         jLabel7.setForeground(new java.awt.Color(192, 192, 192));
-        home home1 = new home();
+        Home home1 = new Home();
         home.setVisible(true);
 // TODO add your handling code here:
     }
