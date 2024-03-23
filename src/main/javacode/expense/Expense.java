@@ -42,6 +42,7 @@ public class Expense extends JFrame{
         model.addColumn("ORDER");
         model.addColumn("INCOME"); 
         model.addColumn("EXPENSE");
+        model.addColumn("SUMMARY");
         model.addColumn("NOTE");
         model.addRow(new Object[]
         {"jk", "ghjghj", "sdfs", "vbn", "ghj"});

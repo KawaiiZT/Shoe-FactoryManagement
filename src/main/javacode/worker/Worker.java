@@ -1,5 +1,7 @@
 package main.javacode.worker;
 
+import main.javacode.expense.Expense;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -51,5 +53,7 @@ public class Worker extends JPanel {
                 workerRemoveFrame.setVisible(true);
             }
         });
+
     }
+    public static void main(String[] args) { new Worker(); }
 }
