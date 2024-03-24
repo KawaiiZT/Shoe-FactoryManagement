@@ -1,4 +1,4 @@
-
+package main.javacode;
 import java.awt.Cursor;
 
 /*
