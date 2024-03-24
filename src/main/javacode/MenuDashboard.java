@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
-
-/**
- *
- * @author KoonD
- */
 package main.javacode;
+
 import main.javacode.expense.Expense;
 import main.javacode.home.Home;
 import main.javacode.worker.Worker;
 import main.javacode.Warehouse.Warehouse;
+
 import java.awt.Cursor;
 
 public class MenuDashboard extends javax.swing.JPanel {

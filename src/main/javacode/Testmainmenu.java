@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 package main.javacode;
+
 import java.awt.Cursor;
+
+// un optimize
 public class Testmainmenu extends javax.swing.JFrame {
 
     /**
