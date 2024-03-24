@@ -1,5 +1,6 @@
 package main.javacode.expense;
 
+// un optimize
 public class IncomeStatement extends javax.swing.JFrame {
 
     /**

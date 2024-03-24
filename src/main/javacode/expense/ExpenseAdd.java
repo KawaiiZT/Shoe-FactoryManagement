@@ -2,6 +2,7 @@ package main.javacode.expense;
 
 import javax.swing.*;
 
+// un optimize
 public class ExpenseAdd extends javax.swing.JFrame {
 
     /**
