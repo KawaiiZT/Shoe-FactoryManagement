@@ -1,4 +1,5 @@
 package main.javacode.worker;
+
 import java.sql.*;
 public class DataWorker {
     public static void main(String[] args) {
@@ -30,7 +31,9 @@ public class DataWorker {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        // ตรวจการเข้าถึงฐานข้อมูล
         try {
+            // ถ้ามีการเข้าถึงฐานข้อมูลให้ปิดการเชื่อมต่อ
             if (connection != null) {
                 s.close();
                 connection.close();

@@ -1,41 +1,30 @@
 package main.javacode.worker;
 
-import java.io.Serializable;
+import java.io.*;
 
 public class ObjectWorker implements Serializable {
-    private String firstname;
-    private String surname;
-    private String email;
-    private String phonenumber;
-    private String bday;
-    private String bmonth;
-    private String byear;
-    private String sex;
-    private String occupation;
-    private String centizenID;
-
-
+    private String firstname, lastname, email, phonenumber, day, month, year, sex, occupation, centizenID;
     public ObjectWorker() {
         this.firstname = null;
-        this.surname = null;
+        this.lastname = null;
         this.email = null;
         this.phonenumber = null;
-        this.bday = null;
-        this.bmonth = null;
-        this.byear = null;
+        this.day = null;
+        this.month = null;
+        this.year = null;
         this.sex = null;
         this.occupation = null;
         this.centizenID = null;
 
     }
-    public ObjectWorker(String firstname,String surname,String email,String phonenumber,String bday,String bmonth,String byear,String sex, String occupation, String centizenID,String address) {
+    public ObjectWorker(String firstname,String lastname,String email,String phonenumber,String day,String month,String year,String sex, String occupation, String centizenID) {
         this.firstname = firstname;
-        this.surname = surname;
+        this.lastname = lastname;
         this.email = email;
         this.phonenumber = phonenumber;
-        this.bday = bday;
-        this.bmonth = bmonth;
-        this.byear = byear;
+        this.day = day;
+        this.month = month;
+        this.year = year;
         this.sex = sex;
         this.occupation = occupation;
         this.centizenID = centizenID;
@@ -44,79 +33,60 @@ public class ObjectWorker implements Serializable {
     public String getFirstname() {
         return firstname;
     }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
-
-    public String getSurname() {
-        return surname;
+    public String getLastname() {
+        return lastname;
     }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getPhonenumber() {
         return phonenumber;
     }
-
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-
     public String getCentizenID() {
         return centizenID;
     }
-
     public void setCentizenID(String centizenID) {
         this.centizenID = centizenID;
     }
-
-    public String getBday() {
-        return bday;
+    public String getDay() {
+        return day;
     }
-
-    public void setBday(String bday) {
-        this.bday = bday;
+    public void setDay(String day) {
+        this.day = day;
     }
-
-    public String getBmonth() {
-        return bmonth;
+    public String getMonth() {
+        return month;
     }
-
-    public void setBmonth(String bmonth) {
-        this.bmonth = bmonth;
+    public void setMonth(String month) {
+        this.month = month;
     }
-
-    public String getByear() {
-        return byear;
+    public String getYear() {
+        return year;
     }
-
-    public void setByear(String byear) {
-        this.byear = byear;
+    public void setYear(String year) {
+        this.year = year;
     }
-
     public String getSex() {
         return sex;
     }
-
     public void setSex(String sex) {
         this.sex = sex;
     }
-
     public String getOccupation() {
         return occupation;
     }
-
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
