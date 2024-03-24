@@ -1,64 +1,71 @@
 package main.javacode.Warehouse;
 
 import main.javacode.MenuDashboard;
-import main.javacode.SidebarMenu;
-import main.javacode.worker.WorkerAdd2;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
-public class Warehouse extends JFrame {
+public class Warehouse extends JFrame implements ActionListener {
     private JFrame fr;
     private JTable tableinfo;
     private JScrollPane sp;
-    private JLabel header;
-    private JPanel p1;
-    private JPanel p2;
-    private JLabel l1;
-    private JButton bn1;
-    private JPanel p3;
-    private JButton bn2;
+    private JLabel header, l1;
+    private MenuDashboard menu;
+    private JPanel p1, p2, p3;
+    private JButton bt1, bt2;
+
     public Warehouse() {
+        // test data
         String column[] = {"ID", "NAME", "QUANTITY", "STATUS"};
         String data[][] = {{"001", "SHOE", "999", "READY TO BE SOLD"}};
 
         fr = new JFrame("ShoeFactoryManagement");
         tableinfo = new JTable(data, column);
-        header = new JLabel("Warehouse");
-        MenuDashboard menu = new MenuDashboard();
-        p1 = new JPanel();
-        p2 = new JPanel(new BorderLayout());
-        fr.setLayout(new BorderLayout());
         sp = new JScrollPane(tableinfo);
+        header = new JLabel("Warehouse");
         l1 = new JLabel("Warehouse");
+        menu = new MenuDashboard();
+        p1 = new JPanel();
+        p2 = new JPanel();
         p3 = new JPanel();
-        bn1 = new JButton("Add Item");
-        bn2 = new JButton("Edit/Remove Item");
+        bt1 = new JButton("Add Item");
+        bt2 = new JButton("Edit/Remove Item");
+
+        // เพิ่ม event ปุ่ม
+        bt1.addActionListener(this);
+        bt2.addActionListener(this);
 
         p1.add(menu);
-        fr.add(p1, BorderLayout.WEST);
-        fr.add(p2);
+
+        p2.setLayout(new BorderLayout());
         p2.add(header, BorderLayout.NORTH);
         p2.add(sp, BorderLayout.CENTER); // Adding JScrollPane instead of JTable
         p2.add(p3, BorderLayout.SOUTH);
-        p3.add(bn1);
-        p3.add(bn2);
 
-        bn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Open WorkerAdd frame
-                WarehouseAdd3 warehouseAdd = new WarehouseAdd3();
-                warehouseAdd.setVisible(true);
-            }
-        });
+        p3.add(bt1);
+        p3.add(bt2);
+
+        fr.setLayout(new BorderLayout());
+        fr.add(p1, BorderLayout.WEST);
+        fr.add(p2);
+
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setSize(1280, 720);
         fr.setVisible(true);
+        // ตั้งตำแหน่งการเปิด GUI เป็นกลางหน้าจอ
+        fr.setLocationRelativeTo(null);
     }
-
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource().equals(bt1)) {
+            // Open WorkerAdd frame
+            WarehouseAdd warehouseAdd = new WarehouseAdd();
+            warehouseAdd.setVisible(true);
+        } else if (ae.getSource().equals(bt2)) {
+            // Open Edit/Remove frame
+        }
+    }
     public static void main(String[] args) {
         new Warehouse();
     }
