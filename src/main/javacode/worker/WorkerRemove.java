@@ -1,11 +1,10 @@
 package main.javacode.worker;
 
 import main.javacode.MenuDashboard;
-import main.javacode.SidebarMenu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+
 public class WorkerRemove extends JFrame{
     private JFrame fr;
     private JPanel pn1, pn2;
