@@ -2,8 +2,7 @@ package main.javacode.home;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import main.javacode.worker.Worker;
 
@@ -15,15 +14,10 @@ public class HomeCard extends JFrame implements ActionListener {
     private Worker workerPanel;
 
     public HomeCard() {
-        setTitle("ShoeFactoryManagement");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1280, 700);
-
         // Sidebar menu setup
         JPanel sidebarMenuPanel = new JPanel();
         sidebarMenuPanel.setLayout(new GridLayout(0, 1)); // Vertical layout
         sidebarMenuPanel.setPreferredSize(new Dimension(150, 400));
-
 
         JButton homeItem = new JButton("Home");
         homeItem.setBackground(new Color(52, 152, 219)); // Set background color
@@ -69,21 +63,27 @@ public class HomeCard extends JFrame implements ActionListener {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(sidebarMenuPanel, BorderLayout.WEST);
         getContentPane().add(cards, BorderLayout.CENTER);
-    }
 
+        setTitle("ShoeFactoryManagement");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1280, 700);
+        // ตั้งตำแหน่งการเปิด GUI เป็นกลางหน้าจอ
+        setLocationRelativeTo(null);
+    }
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        String command = ae.getActionCommand();
+        cardLayout.show(cards, command);
+    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             HomeCard example = new HomeCard();
             example.setVisible(true);
         });
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch(Exception ignored){}
-        String command = e.getActionCommand();
-        cardLayout.show(cards, command);
     }
 }

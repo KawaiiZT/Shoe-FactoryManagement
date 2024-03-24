@@ -1,8 +1,7 @@
-package main.javacode.historylog;
+package main.javacode.removable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.table.*;
 
 public class loghistory extends JPanel {
