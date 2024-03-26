@@ -1,11 +1,16 @@
 package main.javacode.worker;
 
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class DataWorker {
         private String url, user, password, sql1, sql2;
         private Connection con;
         private Statement s;
+        private PreparedStatement pre;
         private ResultSet rec;
+        private DateTimeFormatter dtf;
+        private String time;
 
         public DataWorker() {
             url = "jdbc:mysql://localhost:3306/mydb";
@@ -15,7 +20,10 @@ public class DataWorker {
             sql2 = null;
             con = null;
             s = null;
+            pre = null;
             rec = null;
+            dtf = DateTimeFormatter.ofPattern("HH:mm:ss - dd/MM/yyyy");
+            time = null;
         }
         // return ResultSet
         public void query() {
@@ -52,18 +60,22 @@ public class DataWorker {
         public void insertInto(/*ObjectWorker ow*/) {
             sql1 = "INSERT INTO mydb.worker(firstname, lastname, email, phonenumber, day, month, year, sex, occupation, citizen_id)"
                     + " VALUES('Kull', 'Su', 'kullan', '064', '25', '3', '2024', 'Female', 'null', '11300')";
-            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had added.')";
+            time = dtf.format(LocalDateTime.now());
+            sql2 = "INSERT INTO mydb.logging(text) VALUES(?)";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
                 s.executeUpdate(sql1);
-                s.executeUpdate(sql2);
+                pre = con.prepareStatement(sql2);
+                pre.setString(1,time+" - Worker had added.");
+                pre.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
             }
             try {
                 if (con != null) {
                     s.close();
+                    pre.close();
                     con.close();
                 }
             } catch (SQLException se) {
@@ -72,18 +84,22 @@ public class DataWorker {
         }
         public void update(/*ObjectWorker ow, index*/) {
             sql1 = "UPDATE mydb.worker SET firstname = 'nat' WHERE idworker = 1";
-            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had updated.')";
+            time = dtf.format(LocalDateTime.now());
+            sql2 = "INSERT INTO mydb.logging(text) VALUES(?)";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
                 s.executeUpdate(sql1);
-                s.executeUpdate(sql2);
+                pre = con.prepareStatement(sql2);
+                pre.setString(1,time+" - Worker had updated.");
+                pre.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
             }
             try {
                 if (con != null) {
                     s.close();
+                    pre.close();
                     con.close();
                 }
             } catch (SQLException se) {
@@ -92,18 +108,22 @@ public class DataWorker {
         }
         public void delete(/*ObjectWorker ow, index*/) {
             sql1 = "DELETE FROM mydb.worker WHERE idworker = 1";
-            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had deleted.')";
+            time = dtf.format(LocalDateTime.now());
+            sql2 = "INSERT INTO mydb.logging(text) VALUES(?)";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
                 s.executeUpdate(sql1);
-                s.executeUpdate(sql2);
+                pre = con.prepareStatement(sql2);
+                pre.setString(1,time+" - Worker had deleted.");
+                pre.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
             }
             try {
                 if (con != null) {
                     s.close();
+                    pre.close();
                     con.close();
                 }
             } catch (SQLException se) {
