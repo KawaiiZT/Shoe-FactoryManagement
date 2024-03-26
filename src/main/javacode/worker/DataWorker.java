@@ -76,7 +76,7 @@ public class DataWorker {
                 pre1.setString(10, "113");
                 pre1.executeUpdate();
                 pre2 = con.prepareStatement(sql2);
-                pre2.setString(1, time+" - Worker had added."); // ตัวแปรใส่ตามตำแหน่ง parameter
+                pre2.setString(1, time + " - Worker had added."); // ตัวแปรใส่ตามตำแหน่ง parameter
                 pre2.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
@@ -102,7 +102,7 @@ public class DataWorker {
                 pre1.setInt(2, 1);
                 pre1.executeUpdate();
                 pre2 = con.prepareStatement(sql2);
-                pre2.setString(1, time+" - Worker had updated."); // ตัวแปรใส่ตามตำแหน่ง parameter
+                pre2.setString(1, time + " - Worker had updated."); // ตัวแปรใส่ตามตำแหน่ง parameter
                 pre2.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
@@ -127,7 +127,7 @@ public class DataWorker {
                 pre1.setInt(1, 1); // ตัวแปรใส่ตามตำแหน่ง parameter
                 pre1.executeUpdate();
                 pre2 = con.prepareStatement(sql2);
-                pre2.setString(1, time+" - Worker had deleted."); // ตัวแปรใส่ตามตำแหน่ง parameter
+                pre2.setString(1, time + " - Worker had deleted."); // ตัวแปรใส่ตามตำแหน่ง parameter
                 pre2.executeUpdate();
             } catch (Exception e) {
                 System.out.println(e);
@@ -161,10 +161,10 @@ public class DataWorker {
             this.password = password;
         }
         public static void main(String[] args) {
-            DataWorker d = new DataWorker();
-            d.insertInto();
-            d.delete();
-            d.update();
-            d.query();
+            DataWorker dw = new DataWorker();
+            dw.insertInto();
+            dw.delete();
+            dw.update();
+            dw.query();
         }
 }
