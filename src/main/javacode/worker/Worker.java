@@ -6,7 +6,6 @@ import java.awt.event.*;
 import javax.swing.table.*;
 
 public class Worker extends JPanel implements ActionListener {
-    private JFrame fr;
     private JPanel buttonPanel;
     private JTable tableinfo;
     private JLabel header;
@@ -16,18 +15,18 @@ public class Worker extends JPanel implements ActionListener {
         String data[][] = {{"101", "Trisit", "Charoenparipat"}};
         String columns[] = {"ID", "FIRSTNAME", "LASTNAME"};
 
-        fr = new JFrame();
         buttonPanel = new JPanel();
-        tableinfo = new JTable(model);
-        header = new JLabel("Worker");
-        bt1 = new JButton("Add Worker");
-        bt2 = new JButton("Edit/Remove Worker");
         model = new DefaultTableModel(data, columns) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false; // Make all cells uneditable
             }
         };
+        tableinfo = new JTable(model);
+
+        header = new JLabel("Worker");
+        bt1 = new JButton("Add Worker");
+        bt2 = new JButton("Edit/Remove Worker");
 
         buttonPanel.add(bt1);
         buttonPanel.add(bt2);
@@ -36,16 +35,11 @@ public class Worker extends JPanel implements ActionListener {
         bt1.addActionListener(this);
         bt2.addActionListener(this);
 
-        fr.setLayout(new BorderLayout());
-        fr.add(header, BorderLayout.NORTH);
-        fr.add(new JScrollPane(tableinfo), BorderLayout.CENTER); // Adding JScrollPane instead of JTable
-        fr.add(buttonPanel, BorderLayout.SOUTH);
+        setLayout(new BorderLayout());
+        add(header, BorderLayout.NORTH);
+        add(new JScrollPane(tableinfo), BorderLayout.CENTER); // Adding JScrollPane instead of JTable
+        add(buttonPanel, BorderLayout.SOUTH);
 
-        fr.pack();
-        fr.setVisible(true);
-        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // ตั้งตำแหน่งการเปิด GUI เป็นกลางหน้าจอ
-        fr.setLocationRelativeTo(null);
     }
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -59,7 +53,13 @@ public class Worker extends JPanel implements ActionListener {
             workerRemoveFrame.setVisible(true);
         }
     }
+
     public static void main(String[] args) {
-        Worker w = new Worker();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        new Worker();
     }
 }
