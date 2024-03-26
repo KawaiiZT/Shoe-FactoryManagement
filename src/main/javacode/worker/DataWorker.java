@@ -2,7 +2,7 @@ package main.javacode.worker;
 
 import java.sql.*;
 public class DataWorker {
-        private String url, user, password, sql;
+        private String url, user, password, sql1, sql2;
         private Connection con;
         private Statement s;
         private ResultSet rec;
@@ -11,18 +11,20 @@ public class DataWorker {
             url = "jdbc:mysql://localhost:3306/mydb";
             user = "root";
             password = "1234";
-            sql = null;
+            sql1 = null;
+            sql2 = null;
             con = null;
             s = null;
             rec = null;
         }
+        // return ResultSet
         public void query() {
-            sql = "SELECT * FROM mydb.worker";
+            sql1 = "SELECT * FROM mydb.worker";
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
-                rec = s.executeQuery(sql);
+                rec = s.executeQuery(sql1);
                 while ((rec != null) && (rec.next())) {
                     System.out.println(rec.getString("firstname"));
                     System.out.println(rec.getString("lastname"));
@@ -48,12 +50,14 @@ public class DataWorker {
             }
         }
         public void insertInto(/*ObjectWorker ow*/) {
-            sql = "INSERT INTO mydb.worker(firstname, lastname, email, phonenumber, day, month, year, sex, occupation, citizen_id)"
+            sql1 = "INSERT INTO mydb.worker(firstname, lastname, email, phonenumber, day, month, year, sex, occupation, citizen_id)"
                     + " VALUES('Kull', 'Su', 'kullan', '064', '25', '3', '2024', 'Female', 'null', '11300')";
+            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had added.')";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
-                s.executeUpdate(sql);
+                s.executeUpdate(sql1);
+                s.executeUpdate(sql2);
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -67,11 +71,13 @@ public class DataWorker {
             }
         }
         public void update(/*ObjectWorker ow, index*/) {
-            sql = "UPDATE mydb.worker SET firstname = 'nat' WHERE idworker = 1";
+            sql1 = "UPDATE mydb.worker SET firstname = 'nat' WHERE idworker = 1";
+            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had updated.')";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
-                s.executeUpdate(sql);
+                s.executeUpdate(sql1);
+                s.executeUpdate(sql2);
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -85,11 +91,13 @@ public class DataWorker {
             }
         }
         public void delete(/*ObjectWorker ow, index*/) {
-            sql = "DELETE FROM mydb.worker WHERE idworker = 1";
+            sql1 = "DELETE FROM mydb.worker WHERE idworker = 1";
+            sql2 = "INSERT INTO mydb.logging(text) VALUES('Worker had deleted.')";
             try {
                 con = DriverManager.getConnection(url, user, password);
                 s = con.createStatement();
-                s.executeUpdate(sql);
+                s.executeUpdate(sql1);
+                s.executeUpdate(sql2);
             } catch (Exception e) {
                 System.out.println(e);
             }
