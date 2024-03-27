@@ -1,8 +1,6 @@
 package main.javacode.Warehouse;
 
-import java.io.Serializable;
-
-public class ObjectWarehouse implements Serializable {
+public class ObjectWarehouse {
     private String ID;
     private String name;
     private double quantity;
