@@ -4,7 +4,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DataWareHouse {
+public class DataWareHouse implements InterfaceWarehouse {
     private String url, user, password, sql1, sql2;
     private Connection con;
     private PreparedStatement pre1, pre2;
@@ -26,6 +26,7 @@ public class DataWareHouse {
         time = null;
     }
     // return ResultSet
+    @Override
     public void query() {
         sql1 = "SELECT * FROM mydb.warehouse";
         try {
@@ -50,6 +51,7 @@ public class DataWareHouse {
             System.out.println(se);
         }
     }
+    @Override
     public void insertInto(/*ObjectWarehouse owh*/) {
         sql1 = "INSERT INTO mydb.warehouse(name, quantity, status)"
                 + " VALUES(?, ?, ?)"; // value สามารถใส่ตัวแปรได้
@@ -78,6 +80,7 @@ public class DataWareHouse {
             System.out.println(se);
         }
     }
+    @Override
     public void update(/*ObjectWarehouse owh, index*/) {
         sql1 = "UPDATE mydb.warehouse SET name = ? WHERE idwarehouse = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
@@ -104,6 +107,7 @@ public class DataWareHouse {
             System.out.println(se);
         }
     }
+    @Override
     public void delete(/*ObjectWarehouse owh, index*/) {
         sql1 = "DELETE FROM mydb.warehouse WHERE idwarehouse = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
