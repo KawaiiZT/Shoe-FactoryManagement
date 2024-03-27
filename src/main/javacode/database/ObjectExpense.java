@@ -1,4 +1,4 @@
-package main.javacode.expense;
+package main.javacode.database;
 
 public class ObjectExpense<T> {
     private String day;

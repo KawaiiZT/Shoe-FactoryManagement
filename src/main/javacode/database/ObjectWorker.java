@@ -1,4 +1,4 @@
-package main.javacode.worker;
+package main.javacode.database;
 
 public class ObjectWorker {
     private String firstname, lastname, email, phonenumber, day, month, year, sex, occupation, centizenID;

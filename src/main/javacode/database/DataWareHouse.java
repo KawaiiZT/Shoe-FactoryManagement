@@ -1,10 +1,10 @@
-package main.javacode.Warehouse;
+package main.javacode.database;
 
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DataWareHouse extends AbstractObject{
+public class DataWareHouse extends AbstractData {
     private String url, user, password, sql1, sql2;
     private Connection con;
     private PreparedStatement pre1, pre2;

@@ -1,4 +1,4 @@
-package main.javacode.Warehouse;
+package main.javacode.database;
 
 public class ObjectWarehouse<T> {
     private String ID;
