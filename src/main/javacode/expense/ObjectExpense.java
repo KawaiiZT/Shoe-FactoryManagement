@@ -17,7 +17,7 @@ public class ObjectExpense {
         this.year = null;
         this.note = null;
     }
-    public ObjectExpense(String orders, double income, double expense, String day, String mount, String year, String note){
+    public ObjectExpense(String orders, double income, double expense, String day, String mount, String year, String note) {
         this.orders = orders;
         this.income = income;
         this.expense = expense;
