@@ -1,7 +1,5 @@
 package main.javacode.worker;
 
-import java.io.*;
-
 public class ObjectWorker {
     private String firstname, lastname, email, phonenumber, day, month, year, sex, occupation, centizenID;
     public ObjectWorker() {
