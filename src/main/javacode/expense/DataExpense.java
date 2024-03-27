@@ -1,10 +1,13 @@
 package main.javacode.expense;
 
+import main.javacode.Warehouse.AbstractObject;
+import main.javacode.Warehouse.InterfaceData;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DataExpense {
+public class DataExpense extends AbstractObject{
     private String url, user, password, sql1, sql2;
     private Connection con;
     private PreparedStatement pre1, pre2;
@@ -26,6 +29,7 @@ public class DataExpense {
         time = null;
     }
     // return ResultSet
+    @Override
     public void query() {
         sql1 = "SELECT * FROM mydb.`income-expense`";
         try {
@@ -55,6 +59,7 @@ public class DataExpense {
             System.out.println(se);
         }
     }
+    @Override
     public void insertInto(/*ObjectExpense oe*/) {
         sql1 = "INSERT INTO mydb.`income-expense`(day, month, year, orders, income, expense, summary, note)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)"; // value สามารถใส่ตัวแปรได้
@@ -87,6 +92,7 @@ public class DataExpense {
             System.out.println(se);
         }
     }
+    @Override
     public void update(/*ObjectExpense oe, index*/) {
         sql1 = "UPDATE mydb.`income-expense` SET note = ? WHERE idexpense = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
@@ -113,6 +119,7 @@ public class DataExpense {
             System.out.println(se);
         }
     }
+    @Override
     public void delete(/*ObjectExpense oe, index*/) {
         sql1 = "DELETE FROM mydb.`income-expense` WHERE idexpense = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());

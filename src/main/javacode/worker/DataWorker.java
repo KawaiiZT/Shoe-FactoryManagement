@@ -1,10 +1,13 @@
 package main.javacode.worker;
 
+import main.javacode.Warehouse.AbstractObject;
+import main.javacode.Warehouse.InterfaceData;
+
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DataWorker {
+public class DataWorker extends AbstractObject{
     private String url, user, password, sql1, sql2;
     private Connection con;
     private PreparedStatement pre1, pre2;
@@ -26,6 +29,8 @@ public class DataWorker {
         time = null;
     }
         // return ResultSet
+
+    @Override
     public void query() {
         sql1 = "SELECT * FROM mydb.worker";
         try {
@@ -57,6 +62,7 @@ public class DataWorker {
             System.out.println(se);
         }
     }
+    @Override
     public void insertInto(/*ObjectWorker ow*/) {
         sql1 = "INSERT INTO mydb.worker(firstname, lastname, email, phonenumber, day, month, year, sex, occupation, citizen_id)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; // value สามารถใส่ตัวแปรได้
@@ -92,6 +98,7 @@ public class DataWorker {
             System.out.println(se);
         }
     }
+    @Override
     public void update(/*ObjectWorker ow, index*/) {
         sql1 = "UPDATE mydb.worker SET firstname = ? WHERE idworker = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
@@ -118,6 +125,7 @@ public class DataWorker {
             System.out.println(se);
         }
     }
+    @Override
     public void delete(/*ObjectWorker ow, index*/) {
         sql1 = "DELETE FROM mydb.worker WHERE idworker = ?"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
