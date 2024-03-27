@@ -1,7 +1,7 @@
 package main.javacode.expense;
 
 public class ObjectExpense {
-    private String order;
+    private String orders;
     private double income;
     private double expense;
     private String day;
@@ -9,7 +9,7 @@ public class ObjectExpense {
     private String year;
     private String note;
     public ObjectExpense() {
-        this.order = null;
+        this.orders = null;
         this.income = 0.0;
         this.expense = 0.0;
         this.day = null;
@@ -17,8 +17,8 @@ public class ObjectExpense {
         this.year = null;
         this.note = null;
     }
-    public ObjectExpense(String order, double income, double expense, String day, String mount, String year, String note){
-        this.order = order;
+    public ObjectExpense(String orders, double income, double expense, String day, String mount, String year, String note){
+        this.orders = orders;
         this.income = income;
         this.expense = expense;
         this.day = day;
@@ -27,10 +27,10 @@ public class ObjectExpense {
         this.note = note;
     }
     public String getOrder() {
-        return order;
+        return orders;
     }
-    public void setOrder(String order) {
-        this.order = order;
+    public void setOrder(String orders) {
+        this.orders = orders;
     }
     public double getIncome() {
         return income;
