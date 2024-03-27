@@ -1,17 +1,17 @@
 package main.javacode.Warehouse;
 
-public class ObjectWarehouse {
+public class ObjectWarehouse<T> {
     private String ID;
     private String name;
-    private double quantity;
+    private T quantity;
     private boolean status;
     public ObjectWarehouse() {
         this.ID = null;
         this.name = null;
-        this.quantity = 0.0;
+        this.quantity = null;
         this.status = false;
     }
-    public ObjectWarehouse(String ID, String name, double quantity, boolean status) {
+    public ObjectWarehouse(String ID, String name, T quantity, boolean status) {
         this.ID = ID;
         this.name = name;
         this.quantity = quantity;
@@ -34,11 +34,11 @@ public class ObjectWarehouse {
         this.name = name;
     }
 
-    public double getQuantity() {
+    public T getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(T quantity) {
         this.quantity = quantity;
     }
 

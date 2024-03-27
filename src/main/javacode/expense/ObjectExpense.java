@@ -1,29 +1,32 @@
 package main.javacode.expense;
 
-public class ObjectExpense {
-    private String orders;
-    private double income;
-    private double expense;
+public class ObjectExpense<T> {
     private String day;
     private String month;
     private String year;
+    private String orders;
+    private T income;
+    private T expense;
+    private String summary;
     private String note;
     public ObjectExpense() {
-        this.orders = null;
-        this.income = 0.0;
-        this.expense = 0.0;
         this.day = null;
         this.month = null;
         this.year = null;
+        this.orders = null;
+        this.income = null;
+        this.expense = null;
+        this.summary = null;
         this.note = null;
     }
-    public ObjectExpense(String orders, double income, double expense, String day, String mount, String year, String note) {
-        this.orders = orders;
-        this.income = income;
-        this.expense = expense;
+    public ObjectExpense(String day, String mount, String year, String orders, T income, T expense, String summary, String note) {
         this.day = day;
         this.month = mount;
         this.year = year;
+        this.orders = orders;
+        this.income = income;
+        this.expense = expense;
+        this.summary = summary;
         this.note = note;
     }
     public String getOrder() {
@@ -32,16 +35,16 @@ public class ObjectExpense {
     public void setOrder(String orders) {
         this.orders = orders;
     }
-    public double getIncome() {
+    public T getIncome() {
         return income;
     }
-    public void setIncome(double income) {
+    public void setIncome(T income) {
         this.income = income;
     }
-    public double getExpense() {
+    public T getExpense() {
         return expense;
     }
-    public void setExpense(double expense) {
+    public void setExpense(T expense) {
         this.expense = expense;
     }
     public String getDate(){
@@ -67,5 +70,11 @@ public class ObjectExpense {
     }
     public void setNote(String note) {
         this.note = note;
+    }
+    public String getSummary() {
+        return summary;
+    }
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }
