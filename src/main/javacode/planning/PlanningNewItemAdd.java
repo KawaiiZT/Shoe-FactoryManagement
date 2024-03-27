@@ -116,10 +116,11 @@ public class PlanningNewItemAdd extends javax.swing.JPanel {
         );
     }// </editor-fold>
 
+    //JTextfield will add new item name to the data.
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
-
+    //Jbutton will add Item to the data.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
