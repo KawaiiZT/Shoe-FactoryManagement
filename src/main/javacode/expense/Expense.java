@@ -39,7 +39,7 @@ public class Expense extends JFrame implements ActionListener {
         model.addColumn("SUMMARY");
         model.addColumn("NOTE");
         // ทดสอบการเพิ่มข้อมูล
-        model.addRow(new Object[] {"jk", "ghjghj", "sdfs", "vbn", "ghj"} );
+        model.addRow(new Object[] {"26/12/67", "shoe", "6000", "10000", "---"} );
 
         p1.setPreferredSize(new Dimension(200 ,720));
         p1.add(menu);
