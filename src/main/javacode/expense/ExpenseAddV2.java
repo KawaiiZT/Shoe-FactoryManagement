@@ -40,7 +40,7 @@ public class ExpenseAddV2 {
         lb = new JLabel("ADD Income/Expense");
         lbfont = new Font("Arial", Font.BOLD, 24);
         lb.setFont(lbfont);
-        
+
         lb1 = new JLabel("  Order  ");
         lb2 = new JLabel("  Income  ");
         lb3 = new JLabel("  Expense  ");
@@ -105,6 +105,7 @@ public class ExpenseAddV2 {
 
         fr.setSize(400, 400);
         fr.setLocation(600, 300);
+        fr.setResizable(false);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);
     }
