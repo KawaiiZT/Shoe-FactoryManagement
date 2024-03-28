@@ -8,6 +8,7 @@
  * @author KoonD
  */
 package main.javacode.planning;
+import javax.swing.table.DefaultTableModel;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -24,6 +25,8 @@ public class planningAddgui extends javax.swing.JPanel {
      */
     public planningAddgui() {
         initComponents();
+        table.setRowSelectionAllowed(false);
+        table.getTableHeader().setReorderingAllowed(false);
     }
 
     /**
@@ -75,8 +78,7 @@ public class planningAddgui extends javax.swing.JPanel {
         table.setAutoCreateRowSorter(true);
         table.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
-                        {null, null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null, null}
+
                 },
                 new String [] {
                         "Item", "Materials name", "Quantity", "Ratio", "Material total", "Price", "Summanry", "Check"
@@ -173,25 +175,32 @@ public class planningAddgui extends javax.swing.JPanel {
                                 .addContainerGap())
         );
     }// </editor-fold>
-
+    
+    //selected items you want to choose from
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
+    //go to planningnewitemadd gui
     private void CreatenewActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
+    //add item from combobox to table
     private void AddtotableActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
+    //clear all item in table
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0); // This clears all rows from the table
         // TODO add your handling code here:
     }
 
 
-    // Variables declaration - do not modify
+
+        // Variables declaration - do not modify
     private javax.swing.JButton Addtotable;
     private javax.swing.JButton Clear;
     private javax.swing.JButton Createnew;
