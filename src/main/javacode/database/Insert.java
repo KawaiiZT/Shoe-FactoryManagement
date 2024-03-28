@@ -26,16 +26,16 @@ public class Insert extends AbstractData {
         try {
             con = DriverManager.getConnection(url, user, password);
             pre1 = con.prepareStatement(sql1);
-            pre1.setString(1, "Nat"); // ตัวแปรใส่ตามตำแหน่ง parameter
-            pre1.setString(2, "Akk");
-            pre1.setString(3, "nam");
-            pre1.setString(4, "084");
-            pre1.setString(5, "3");
-            pre1.setString(6, "23");
-            pre1.setString(7, "2024");
-            pre1.setString(8, "Male");
-            pre1.setString(9, "Student");
-            pre1.setString(10, "113");
+            pre1.setString(1, ow.getFirstname()); // ตัวแปรใส่ตามตำแหน่ง parameter
+            pre1.setString(2, ow.getLastname());
+            pre1.setString(3, ow.getEmail());
+            pre1.setString(4, ow.getPhonenumber());
+            pre1.setString(5, ow.getDay());
+            pre1.setString(6, ow.getMonth());
+            pre1.setString(7, ow.getYear());
+            pre1.setString(8, ow.getSex());
+            pre1.setString(9, ow.getOccupation());
+            pre1.setString(10, ow.getCentizenID());
             pre1.executeUpdate();
             pre2 = con.prepareStatement(sql2);
             pre2.setString(1, time + " - Worker had added."); // ตัวแปรใส่ตามตำแหน่ง parameter
@@ -54,7 +54,7 @@ public class Insert extends AbstractData {
         }
     }
     @Override
-    public void insertInto(ObjectExpense oe) {
+    public void insertInto(ObjectExpense<Integer> oe) {
         sql1 = "INSERT INTO mydb.`income-expense`(day, month, year, orders, income, expense, summary, note)"
                 + " VALUES(?, ?, ?, ?, ?, ?, ?, ?)"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
@@ -62,14 +62,14 @@ public class Insert extends AbstractData {
         try {
             con = DriverManager.getConnection(url, user, password);
             pre1 = con.prepareStatement(sql1);
-            pre1.setString(1, "10"); // ตัวแปรใส่ตามตำแหน่ง parameter
-            pre1.setString(2, "3");
-            pre1.setString(3, "2024");
-            pre1.setString(4, "Lec");
-            pre1.setInt(5,0);
-            pre1.setInt(6, 50);
-            pre1.setInt(7, -50);
-            pre1.setString(8, "test");
+            pre1.setString(1, oe.getDay()); // ตัวแปรใส่ตามตำแหน่ง parameter
+            pre1.setString(2, oe.getMonth());
+            pre1.setString(3, oe.getYear());
+            pre1.setString(4, oe.getOrders());
+            pre1.setInt(5,oe.getIncome());
+            pre1.setInt(6, oe.getExpense());
+            pre1.setInt(7, oe.getSummary());
+            pre1.setString(8, oe.getNote());
             pre1.executeUpdate();
             pre2 = con.prepareStatement(sql2);
             pre2.setString(1, time + " - Expense had added."); // ตัวแปรใส่ตามตำแหน่ง parameter
@@ -87,7 +87,7 @@ public class Insert extends AbstractData {
         }
     }
     @Override
-    public void insertInto(ObjectWarehouse owh) {
+    public void insertInto(ObjectWarehouse<Integer> owh) {
         sql1 = "INSERT INTO mydb.warehouse(name, quantity, status)"
                 + " VALUES(?, ?, ?)"; // value สามารถใส่ตัวแปรได้
         time = dtf.format(LocalDateTime.now());
@@ -95,9 +95,9 @@ public class Insert extends AbstractData {
         try {
             con = DriverManager.getConnection(url, user, password);
             pre1 = con.prepareStatement(sql1);
-            pre1.setString(1, "Shoe"); // ตัวแปรใส่ตามตำแหน่ง parameter
-            pre1.setInt(2, 99);
-            pre1.setString(3, "Have");
+            pre1.setString(1, owh.getName()); // ตัวแปรใส่ตามตำแหน่ง parameter
+            pre1.setInt(2, owh.getQuantity());
+            pre1.setBoolean(3, owh.getStatus());
             pre1.executeUpdate();
             pre2 = con.prepareStatement(sql2);
             pre2.setString(1, time + " - WareHouse had added."); // ตัวแปรใส่ตามตำแหน่ง parameter
@@ -120,9 +120,9 @@ public class Insert extends AbstractData {
         return rec;
     }
     public void update(ObjectWorker ow, int i) {}
-    public void update(ObjectExpense oe, int i) {}
-    public void update(ObjectWarehouse owh, int i) {}
+    public void update(ObjectExpense<Integer> oe, int i) {}
+    public void update(ObjectWarehouse<Integer> owh, int i) {}
     public void delete(ObjectWorker ow, int i) {}
-    public void delete(ObjectExpense oe, int i) {}
-    public void delete(ObjectWarehouse owh, int i) {}
+    public void delete(ObjectExpense<Integer> oe, int i) {}
+    public void delete(ObjectWarehouse<Integer> owh, int i) {}
 }

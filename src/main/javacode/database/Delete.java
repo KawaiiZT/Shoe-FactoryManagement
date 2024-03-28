@@ -99,9 +99,9 @@ public class Delete extends AbstractData {
         return rec;
     }
     public void insertInto(ObjectWorker ow) {}
-    public void insertInto(ObjectExpense oe) {}
-    public void insertInto(ObjectWarehouse owh) {}
+    public void insertInto(ObjectExpense<Integer> oe) {}
+    public void insertInto(ObjectWarehouse<Integer> owh) {}
     public void update(ObjectWorker ow, int i) {}
-    public void update(ObjectExpense oe, int i) {}
-    public void update(ObjectWarehouse owh, int i) {}
+    public void update(ObjectExpense<Integer> oe, int i) {}
+    public void update(ObjectWarehouse<Integer> owh, int i) {}
 }

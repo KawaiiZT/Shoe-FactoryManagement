@@ -7,8 +7,9 @@ public class ObjectExpense<T> {
     private String orders;
     private T income;
     private T expense;
-    private String summary;
+    private T summary;
     private String note;
+
     public ObjectExpense() {
         this.day = null;
         this.month = null;
@@ -19,9 +20,10 @@ public class ObjectExpense<T> {
         this.summary = null;
         this.note = null;
     }
-    public ObjectExpense(String day, String mount, String year, String orders, T income, T expense, String summary, String note) {
+
+    public ObjectExpense(String day, String month, String year, String orders, T income, T expense, T summary, String note) {
         this.day = day;
-        this.month = mount;
+        this.month = month;
         this.year = year;
         this.orders = orders;
         this.income = income;
@@ -29,10 +31,28 @@ public class ObjectExpense<T> {
         this.summary = summary;
         this.note = note;
     }
-    public String getOrder() {
+    public String getDay() {
+        return day;
+    }
+    public void setDay(String day) {
+        this.day = day;
+    }
+    public String getMonth() {
+        return month;
+    }
+    public void setMonth(String month) {
+        this.month = month;
+    }
+    public String getYear() {
+        return year;
+    }
+    public void setYear(String year) {
+        this.year = year;
+    }
+    public String getOrders() {
         return orders;
     }
-    public void setOrder(String orders) {
+    public void setOrders(String orders) {
         this.orders = orders;
     }
     public T getIncome() {
@@ -47,34 +67,16 @@ public class ObjectExpense<T> {
     public void setExpense(T expense) {
         this.expense = expense;
     }
-    public String getDate(){
-        return day;
+    public T getSummary() {
+        return summary;
     }
-    public void setDate(String date) {
-        this.day = date;
-    }
-    public String getMonth(){
-        return month;
-    }
-    public void setMonth(String month) {
-        this.month = month;
-    }
-    public String getYear(){
-        return year;
-    }
-    public void setYear(String year) {
-        this.year = year;
+    public void setSummary(T summary) {
+        this.summary = summary;
     }
     public String getNote() {
         return note;
     }
     public void setNote(String note) {
         this.note = note;
-    }
-    public String getSummary() {
-        return summary;
-    }
-    public void setSummary(String summary) {
-        this.summary = summary;
     }
 }
