@@ -175,7 +175,7 @@ public class planningAddgui extends javax.swing.JPanel {
                                 .addContainerGap())
         );
     }// </editor-fold>
-    
+
     //selected items you want to choose from
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
